@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mvvm</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- <img src="mvvm.png" alt="img"> -->
+        <input type="text" v-model="message.a">
+        <div>哈哈哈</div>
+        {{ message.a }}
+        <p>{{ b }}</p>
+    </div>
+
+    <script src="watcher.js"></script>
+    <script src="observer.js"></script>
+    <script src="compile.js"></script>
+    <script src="mvvm.js"></script>
+    <script>
+        // vue 中实现双向数据绑定 1.模版编译 2.数据劫持Object.defineProperty 3.Watcher
+        let vm = new MVVM({
+            el: '#app',
+            data: {
+                message: {
+                    a: '12123'
+                },
+                b: '666'
+            }
+        })
+    </script>
+</body>
+</html>
